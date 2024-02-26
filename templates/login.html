@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'login.css') }}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+</head>
+<body>
+    <div class="flashed_msgs">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                <div class="flashes flashes-{{ category }}" id="flashed">
+                    <p><b>{{ message }}</b></p>
+                    <button type="submit" class="remove_btn" onclick="removeFlash()" style="margin-left: 10px; width: 25px; height: 25px; background-color: grey; border: 1px solid black; border-radius: 10px; cursor: pointer;">🗙</button>
+                </div>
+                {% endfor %}
+                <script>
+                    function removeFlash() {
+                        const element = document.getElementById('flashed');
+                        element.remove();
+                    }
+                </script>
+            {% endif %}
+        {% endwith %}
+    </div>
+    <div class="login-background">
+        <div class="content">
+            <div class="title">
+                <h1>Sign In</h1>
+            </div>
+            <form action="" method="post">
+                <div class="input-block">
+                    <div class="text-input-block">
+                        <div class="text-input username">
+                            <input type="text" name="username" id="username" placeholder="Username">
+                        </div>
+                        <div class="text-input password">
+                            <input type="password" name="password" id="password" placeholder="Password">
+                        </div>
+                    </div>
+                    <div class="button-input signin">
+                        <button type="submit">Sign In</button>
+                    </div>
+                </div>
+            </form>
+            <div class="no-account">
+                <a href="{{ url_for('signup') }}">Don't have a account?</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

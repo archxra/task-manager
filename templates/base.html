@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block linkcss %}{% endblock %}
+    <style>
+        @import url("{{ url_for('static', filename = 'base.css') }}");
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+    {% block sidebar %}
+    <div class="sidebar">
+        <div class="app-name">
+            <h1>Task Manager</h1>
+        </div>
+        <div class="navbar">
+            <div class="navbar-1">
+                <div class="navlink navlink-1 tasks">
+                    <img src="{{ url_for('static', filename='icons/tasks.png') }}" alt="tasks">
+                    <a href="/tasks/0">Tasks</a>
+                </div>
+            </div>
+            <div class="navbar-2">
+                <div class="navlink logout">
+                    <button><a href="/logout">Log out</a></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endblock %}
+    {% block content %}{% endblock %}
+</body>
+</html>

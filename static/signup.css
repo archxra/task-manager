@@ -1,0 +1,110 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: url('/static/images/bg1.jpg');
+}
+
+.signup-background {
+    max-width: 17%;
+    height: 100vh;
+    background-color: #384b41;
+    padding: 3% 3%;
+    box-shadow: 20px -20px 15px #384b41;
+    font-family: sans-serif;
+}
+
+.signup-background .content {
+    margin-top: 20vh;
+    margin-bottom: 15vh;
+}
+
+.signup-background .content .title {
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5vh;
+}
+
+.signup-background .text-input-block {
+    margin-bottom: 5vh;
+}
+
+.signup-background .text-input-block .text-input:first-child {
+    margin-bottom: 3vh;
+}
+
+.signup-background .text-input-block .text-input input{
+    width: 90%;
+    font-size: 15px;
+    padding: 2% 5%;
+    border: 1px solid #000;
+    border-radius: 5px;
+}
+
+.signup-background .text-input-block .text-input input:focus {
+    border: 1px solid orangered;
+    outline: 0;
+}
+
+.signup-background .input-block .button-input button {
+    transition: 0.2s;
+    background-color: orangered;
+    border: none;
+    padding: 5px 20px;
+    text-align: center;
+    font-size: 17px;
+    width: 100%;
+    border-radius: 5px;
+    transition: .15s;
+}
+
+.signup-background .input-block .button-input button:hover {
+    cursor: pointer;
+    background-color: #db3000;
+}
+
+.signup-background .input-block .button-input button:active {
+    background-color: rgb(227, 60, 0);
+}
+
+.flashed_msgs {
+    padding: 10px 0;
+    width: 100vw;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 99999;
+}
+
+.flashed_msgs .flashes-success {
+    background-color: seagreen;
+}
+
+.flashed_msgs .flashes-error {
+    background-color: red;
+}
+
+.flashed_msgs .flashes {
+    display: flex;
+    flex-direction: row;
+    font-family: sans-serif;
+    font-size: 20px;
+    color: white;
+    padding: 5px 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.flashed_msgs .flashes .remove_btn button {
+    display: block;
+    background-color: bisque;
+    width: 20px;
+    height: 20px;
+    margin-left: 20px;
+    cursor: pointer;
+}

@@ -1,0 +1,208 @@
+* {
+	margin: 0;
+	padding: 0;
+	font-family: sans-serif;
+}
+
+.content {
+	background-image: linear-gradient(45deg, #50ffb1, #004346);
+}
+
+.content header {
+	background-color: #2AC38A;
+	width: calc(83vw - 60px);
+	border-bottom: 1px solid black;
+}
+
+.content header .days-container {
+	padding: 10px 30px;
+}
+
+.content header .days-container a {
+	transition: 0.3s;
+	color: black;
+	text-decoration: none;
+}
+
+.content header .days-container a:active {
+	color: black;
+}
+
+.content header .days {
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	justify-content: space-between;
+}
+
+.content header .days .day {
+	transition: 0.3s;
+	background-color: #D9EDDF;
+	padding: 5px 30px;
+	border: 1px solid black;
+	border-radius: 10px;
+}
+
+.content header .days .day:hover {
+	background-color: #bed1c4;
+}
+
+.content header .progressbar-container {
+	background-color: black;
+}
+
+.content header .progressbar-container .progressbar progress {
+	border: 0;
+	background-color: grey;
+	height: 5px;
+	width: 100%;
+}
+
+.content .tasks-section {
+	display: flex;
+	flex-direction: row;
+}
+
+.content .tasks-section .tasks-container {
+	width: 100%;
+	padding: 5%;
+	overflow: scroll !important;
+}
+
+.content .tasks-container .for-day {
+	font-size: 25px;
+	margin-bottom: 5%;
+}
+
+.content .tasks-container .tasks-list .task {
+	padding: 7px 15px;
+	margin-bottom: 2%;
+	background-color: #f3a712;
+	border-radius: 10px;
+}
+
+.content .tasks-container .tasks-list .task label {
+	margin-left: 10px;
+	font-size: 20px;
+}
+
+.content .tasks-container .tasks-list .task .task-checkbox input[type="checkbox"] {
+	background-color: white;
+	border: 1px solid black;
+	border-radius: 20px;
+	width: 20px;
+	height: 20px;
+	margin: 0;
+	font: inherit;
+	color: currentColor;
+	width: 20px;
+	height: 20px;
+	border: 1px solid black;
+	border-radius: 10px;
+}
+
+.content .tasks-container .tasks-list .task .task-info {
+	float: left;
+}
+
+.content .tasks-container .tasks-list .task .delete-block {
+	display: flex;
+	justify-content: end;
+	padding-right: 5px;
+}
+
+.content .tasks-container .tasks-list .task .task-container a {
+	text-decoration: none;
+	color: black;
+}
+
+.content .tasks-container .tasks-list .task .task-checkbox:checked + label {
+	text-decoration: line-through;
+}
+
+.content .tasks-container .add_task {
+	display: flex;
+	flex-direction: row;
+}
+
+.content .tasks-container .add_task button {
+	transition: 0.3s;
+	padding: 0 10px;
+	font-size: 20px;
+	background-color: #04e800;
+	border: 1px solid green;
+	border-radius: 10px;
+}
+
+.content .tasks-container .add_task button:hover {
+	cursor: pointer;
+	background-color: #03bf00;
+}
+
+.content .tasks-container .add_task input[type="text"] {
+	transition: 0.3s;
+	width: 95%;
+	margin-right: 20px;
+	padding-left: 10px;
+	background-color: lavender;
+	border: 1px solid black;
+	border-radius: 5px;
+	font-size: 20px;
+}
+
+.content .tasks-container .add_task input[type="text"]:focus {
+	border: 1px solid #004346;
+    outline: 0;
+    background-color: #d5d5eb;
+}
+
+.content a {
+	text-decoration: none;
+}
+
+.content a:active {
+	color: blueviolet;
+}
+
+.content a:visited {
+	color: blue;
+}
+
+.flashed_msgs {
+    padding: 10px 0;
+    width: 100vw;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 99999;
+}
+
+.flashed_msgs .flashes-success {
+    background-color: seagreen;
+}
+
+.flashed_msgs .flashes-error {
+    background-color: red;
+}
+
+.flashed_msgs .flashes {
+    display: flex;
+    flex-direction: row;
+    font-family: sans-serif;
+    font-size: 20px;
+    color: white;
+    padding: 5px 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.flashed_msgs .flashes .remove_btn button {
+    display: block;
+    background-color: bisque;
+    width: 20px;
+    height: 20px;
+    margin-left: 20px;
+    cursor: pointer;
+}

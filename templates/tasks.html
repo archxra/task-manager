@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% block linkcss %} <link rel="stylesheet" href="{{ url_for('static', filename = 'tasks.css') }}"> {% endblock %}
+{% block title %}Tasks{% endblock %}
+{% block content %}
+<div class="flashed_msgs">
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+            <div class="flashes flashes-{{ category }}" id="flashed">
+                <p><b>{{ message }}</b></p>
+                <button type="submit" class="remove_btn" onclick="removeFlash()" style="margin-left: 10px; width: 25px; height: 25px; background-color: grey; border: 1px solid black; border-radius: 10px; cursor: pointer;">🗙</button>
+            </div>
+            {% endfor %}
+            <script>
+                function removeFlash() {
+                    const element = document.getElementById('flashed');
+                    element.remove();
+                }
+            </script>
+        {% endif %}
+    {% endwith %}
+</div>
+<div class="content">
+	<header class="header">
+		<div class="days-container">
+			<div class="days">
+				{% for index in days_num %}
+				<a href="/tasks/{{ index }}"><div class="day"><p>{{ days[index] }}</p></div></a>
+				{% endfor %}
+			</div>
+		</div>
+	</header>
+	<section class="tasks-section">
+		<div class="tasks-container">
+			<div class="for-day">
+				<h1>Tasks for {{ days[id] }}</h1>
+			</div>
+			<div class="tasks-list" style="overflow-y: scroll;">
+				{% for index in tasks_num %}
+				<div class="task">
+					<div class="task-container">
+						<div class="task-info">
+							<input type="checkbox" id="task-checkbox-{{ index }}" class="task-checkbox" name="task-checkbox">
+							<label for="task-checkbox-{{ index }}" id="textToStrike" class="textToStrike">{{ tasks[index].task }}</label>
+						</div>
+						<div class="delete-block">
+							<a href="/delete/{{ tasks[index].for_day }}/{{ tasks[index].id }}">🗙</a>
+						</div>
+					</div>
+				</div>
+				{% endfor %}
+				<form action="/tasks/{{ id }}" method="post">
+					<div class="task add_task">
+						<input type="text" class="add_task-name" placeholder="Add task" name="add_task-name">
+						<button class="add_task-btn">Add</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</section>
+</div>
+{% endblock %}
