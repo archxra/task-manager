@@ -1,6 +1,5 @@
 from flask import Flask, render_template, redirect, request, flash, url_for
 from flask_sqlalchemy import SQLAlchemy
-from sqlalchemy import create_engine
 from datetime import datetime, timedelta
 import threading
 import webview
