@@ -4,7 +4,6 @@ from sqlalchemy import create_engine
 from datetime import datetime, timedelta
 import threading
 import webview
-from tkinter import *
 
 app = Flask(__name__)
 
