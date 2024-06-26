@@ -53,13 +53,16 @@ create_db()
 def login():
     if request.method == "POST":
         user = Users.query.filter_by(name = request.form.get("username")).first()
-        if user.password == request.form.get("password"):
-            user.authorized = 1
-            db.session.commit()
-            flash("You succesfully signed in!", "success")
-            return redirect('tasks/0')
+        if user:
+            if user.password == request.form.get("password"):
+                user.authorized = 1
+                db.session.commit()
+                flash("You succesfully signed in!", "success")
+                return redirect('tasks/0')
+            else:
+                flash("Incorrect password", "error")
         else:
-            flash("Incorrect username or password", "error")
+            flash("User does not exist", "error")
     return render_template("login.html")
 
 @app.route('/signup', methods = ['GET', 'POST'])
