@@ -119,13 +119,6 @@ def logout():
 def run_flask_app():
     app.run(debug=True, threaded=True, use_reloader=False)
 
-def create_window():
-    flask_thread = threading.Thread(target=run_flask_app)
-    flask_thread.daemon = True
-    flask_thread.start()
-    webview.create_window('Task manager', width=1500, height=800, url='login')
-    webview.start(http_server=True, http_port=5000)
-
 if __name__ == '__main__':
     t = threading.Thread(target=run_flask_app)
     t.daemon = True
