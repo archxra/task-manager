@@ -4,7 +4,9 @@
 }
 
 body {
-    background-image: url('/static/images/bg1.jpg');
+    background-image: url('/static/images/bg-anim.gif');
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .login-background {
